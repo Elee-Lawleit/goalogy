@@ -7,7 +7,7 @@ module.exports = {
         "edit-add": "#4058EC",
         "delete": "#E43B5B",
         "view": "#66CFD2",
-        "text": "#454746",
+        "primary": "#454746",
         "background": "#D6F3F3",
         "custom": {
           purple1: "#B37DB5",
