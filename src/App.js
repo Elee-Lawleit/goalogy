@@ -16,8 +16,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        {/* <Route path="/dashboard" element={<AdminComponent />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        {/* 
         <Route path="/schoolstatus/:id" element={<SchoolstatusComponent />} />
         <Route path="/accountsettings" element={<AccountsettingsComponent />} />
         <Route path="/category" element={<CategoryComponent />} />

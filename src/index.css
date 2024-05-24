@@ -39,7 +39,8 @@ body {
 }
 
 .sign-up-in form {
-  background-color: #ffffff;
+  background: -webkit-linear-gradient(to right, #b6ce67, #86b341);
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,9 +131,6 @@ body {
 }
 
 .sign-up-in .overlay {
-  background: #ff416c;
-  background: -webkit-linear-gradient(to right, #a9e0e1, #66cfd2);
-  background: linear-gradient(to right, #a9e0e1, #66cfd2);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
