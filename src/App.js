@@ -11,15 +11,16 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import UsersComponent from "./components/shared/UsersComponent";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
-import StudentDetails from "./pages/StudentDetails";
-import Goals from "./pages/Goals"
+import StudentDetails from "./pages/studentDetails";
+import Goals from "./pages/goals"
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
-        {/* <Route path="/dashboard" element={<AdminComponent />} />
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<Login />} />
+        {/* 
         <Route path="/schoolstatus/:id" element={<SchoolstatusComponent />} />
         <Route path="/accountsettings" element={<AccountsettingsComponent />} />
         <Route path="/category" element={<CategoryComponent />} />
