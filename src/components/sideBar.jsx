@@ -9,7 +9,7 @@ import {
 const navigation = [
   { name: "Dashboard", href: "/", icon: HomeIcon },
   { name: "Account Settings", href: "/accountsettings", icon: UsersIcon },
-  { name: "Logout", href: "/logout", icon: FolderIcon },
+  { name: "Logout", href: "/login", icon: FolderIcon },
 ];
 
 function classNames(...classes) {
@@ -47,6 +47,22 @@ export default function SideBar() {
               </li>
             ))}
           </ul>
+        </li>
+        <li className="-mx-6 mt-auto">
+          <NavLink
+            to="/accountsettings"
+            className="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-primary hover:text-white hover:bg-custom-green2"
+          >
+            <img
+              className="h-12 w-12 rounded-full bg-indigo-700"
+              src="50-1678281474.png"
+              alt=""
+            />
+            <p className="flex flex-col">
+              <span aria-hidden="true">Amy Springer</span>
+              <span className="true text-xs font-normal">Case Manager</span>
+            </p>
+          </NavLink>
         </li>
       </ul>
     </nav>

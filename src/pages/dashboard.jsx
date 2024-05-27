@@ -5,17 +5,9 @@ import {
   Transition,
   TransitionChild,
 } from "@headlessui/react";
-import {
-  Bars3Icon,
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SideBar from "../components/sideBar";
+import AccountsSettings from "../components/accountsSettingsForm";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -72,7 +64,7 @@ export default function Dashboard() {
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-custom-green1 px-6 pb-2">
                     <div className="flex py-4 items-center">
                       <img
-                        className="w-20 w-auto"
+                        className="w-20"
                         src="goalogylogo.png"
                         alt="goalogy"
                       />
@@ -117,9 +109,12 @@ export default function Dashboard() {
             />
           </a>
         </div>
-
         <main className="py-10 lg:pl-72">
-          <div className="px-4 sm:px-6 lg:px-8">{/* Your content */}</div>
+          <div className="px-4 sm:px-6 lg:px-8">
+            <h1></h1>
+
+            <AccountsSettings />
+          </div>
         </main>
       </div>
     </>
