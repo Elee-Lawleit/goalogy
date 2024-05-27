@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 // import UsersComponent from "./components/shared/UsersComponent";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
+import StudentDetails from "./pages/StudentDetails";
+import Goals from "./pages/Goals"
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
           path="/student-registration"
           element={<StudentRegistrationComponent />}
         /> */}
+        <Route path="/student-details" element={<StudentDetails/>}/>
+        <Route path="/student-goals" element={<Goals/>}/>
       </Routes>
     </Router>
   );
