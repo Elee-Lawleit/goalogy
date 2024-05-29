@@ -70,7 +70,7 @@ export default function AccountsSettings() {
                   />
                   <label
                     htmlFor="photo"
-                    className="cursor-pointer rounded-md bg-edit-add px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                    className="cursor-pointer rounded-md bg-submit px-2.5 py-1.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-opacity-80"
                   >
                     Change
                   </label>
@@ -334,7 +334,94 @@ export default function AccountsSettings() {
           </button>
         </div>
       </form>
-      <form></form>
+      <form>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 border-b border-gray-900/10 pb-12 md:grid-cols-3">
+          <div>
+            <h2 className="text-base font-semibold leading-7 text-gray-900">
+              Password
+            </h2>
+            <p className="mt-1 text-sm leading-6 text-gray-600">
+              Change Your Password
+            </p>
+          </div>
+          <div className="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6 md:col-span-2">
+            <div className="sm:col-span-4">
+              <label
+                htmlFor="current-password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Current Password
+              </label>
+              <div className="mt-2">
+                <input
+                  id="current-password"
+                  type="password"
+                  autoComplete="current-password"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-submit outline-none sm:text-sm sm:leading-6"
+                  {...register("currentPassword")}
+                />
+                {errors?.currentPassword && (
+                  <span className="text-[#E20000] text-xs">
+                    {errors.currentPassword.message}
+                  </span>
+                )}
+              </div>
+            </div>
+            <div className="sm:col-span-4">
+              <label
+                htmlFor="new-password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                New Password
+              </label>
+              <div className="mt-2">
+                <input
+                  id="new-password"
+                  type="password"
+                  autoComplete="new-password"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-submit outline-none sm:text-sm sm:leading-6"
+                  {...register("newPassword")}
+                />
+                {errors?.newPassword && (
+                  <span className="text-[#E20000] text-xs">
+                    {errors.newPassword.message}
+                  </span>
+                )}
+              </div>
+            </div>
+            <div className="sm:col-span-4">
+              <label
+                htmlFor="confirm-new-password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Confirm New Password
+              </label>
+              <div className="mt-2">
+                <input
+                  id="confirm-new-password"
+                  type="password"
+                  autoComplete="new-password"
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-submit outline-none sm:text-sm sm:leading-6"
+                  {...register("confirmNewPassword")}
+                />
+                {errors?.confirmNewPassword && (
+                  <span className="text-[#E20000] text-xs">
+                    {errors.confirmNewPassword.message}
+                  </span>
+                )}
+              </div>
+            </div>
+            <div className="sm:col-span-4">
+              <button
+                type="submit"
+                className="rounded-md bg-submit px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Update Password
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
     </div>
   );
 }

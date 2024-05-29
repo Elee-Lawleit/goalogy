@@ -193,3 +193,9 @@ body {
   height: 40px;
   width: 40px;
 }
+
+.icons svg {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+}

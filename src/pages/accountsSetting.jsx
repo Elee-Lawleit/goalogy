@@ -7,12 +7,9 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SideBar from "../components/sideBar";
+import AccountsSettings from "../components/accountsSettingsForm";
 
-import YourStudents from "../components/yourStudents";
-import YourStudentsTable from "../components/yourStudentsTable";
-import YourActiveGoals from "../components/yourActiveGoals";
-
-export default function Dashboard() {
+export default function AccountSetting() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -112,18 +109,9 @@ export default function Dashboard() {
             />
           </a>
         </div>
-        <main className="py-10 px-10 lg:pl-72">
+        <main className="py-10 lg:pl-72">
           <div className="px-4 sm:px-6 lg:px-8">
-            {/* <h1 className="text-2xl font-bold mb-6">Your Students</h1>
-            <div className="mt-4">
-              <YourStudents />
-            </div> */}
-            <div className="mt-4">
-              <YourStudentsTable />
-            </div>
-            <div className="mt-16">
-              <YourActiveGoals />
-            </div>
+            <AccountsSettings />
           </div>
         </main>
       </div>
