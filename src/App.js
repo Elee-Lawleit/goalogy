@@ -13,6 +13,8 @@ import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import StudentDetails from "./pages/studentDetails";
 import Goals from "./pages/goals"
+import AddStudent from "./pages/addStudent";
+import AddGoal from "./pages/addGoal"
 
 function App() {
   return (
@@ -33,6 +35,8 @@ function App() {
         /> */}
         <Route path="/student-details" element={<StudentDetails/>}/>
         <Route path="/student-goals" element={<Goals/>}/>
+        <Route path="/add-student" element={<AddStudent/>}/>
+        <Route path="/add-goal" element={<AddGoal/>}/>
       </Routes>
     </Router>
   );
