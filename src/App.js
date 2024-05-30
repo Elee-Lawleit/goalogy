@@ -20,6 +20,7 @@ import AccountsSetting from "./pages/accountsSetting";
 
 import AddStudent from "./pages/addStudent"
 import AddGoal from "./pages/addGoal"
+import LearningPlan from "./pages/learningplan"
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route path="/student-goals" element={<Goals />} />
           <Route path="/add-goal" element={<AddGoal />} />
           <Route path="/add-student" element={<AddStudent />} />
+          <Route path="/learning-plan" element={<LearningPlan />} />
         </Routes>
       </Layout>
     </Router>
