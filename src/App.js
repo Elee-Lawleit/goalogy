@@ -11,6 +11,9 @@ import Goals from "./pages/goals";
 import AccountsSetting from "./pages/accountsSetting";
 import { AuthProvider } from "./contexts/AuthContext";
 
+import AddStudent from "./pages/addStudent"
+import AddGoal from "./pages/addGoal"
+
 function App() {
   return (
     <AuthProvider>
@@ -22,6 +25,8 @@ function App() {
           <Route path="/accountsettings" element={<AccountsSetting />} />
           <Route path="/student-details" element={<StudentDetails />} />
           <Route path="/student-goals" element={<Goals />} />
+          <Route path="/add-goal" element={<AddGoal />} />
+          <Route path="/add-student" element={<AddStudent />} />
         </Routes>
       </Router>
     </AuthProvider>
