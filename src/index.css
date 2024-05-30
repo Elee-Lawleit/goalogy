@@ -199,3 +199,9 @@ body {
   width: 1.5rem;
   height: 1.5rem;
 }
+
+.css-1dimb5e-singleValue div {
+  display: flex !important;
+  align-items: center;
+  gap: 6px;
+}

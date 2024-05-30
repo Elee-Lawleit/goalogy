@@ -4,6 +4,7 @@ import { useReactToPrint } from "react-to-print";
 import { saveAs } from "file-saver";
 import copy from "copy-to-clipboard";
 import * as XLSX from "xlsx";
+import { NavLink } from "react-router-dom";
 
 const activeGoals = [
   {
@@ -104,12 +105,12 @@ export default function YourActiveGoals() {
           </div>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
-          <button
-            type="button"
+          <NavLink
+            to="add-goal"
             className="block rounded-md bg-edit-add px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Add Goal
-          </button>
+          </NavLink>
         </div>
       </div>
       <div className="mt-8 flow-root">

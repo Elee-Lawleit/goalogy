@@ -5,14 +5,12 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
-import StudentDetails from "./pages/studentDetails";
 import Goals from "./pages/goals";
-
 import AccountsSetting from "./pages/accountsSetting";
 import { AuthProvider } from "./contexts/AuthContext";
-
-import AddStudent from "./pages/addStudent"
-import AddGoal from "./pages/addGoal"
+import Student from "./pages/student";
+import RegisterStudent from "./pages/resgisterStudent";
+import AddNewGoal from "./pages/addNewGoal";
 
 function App() {
   return (
@@ -23,10 +21,10 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/accountsettings" element={<AccountsSetting />} />
-          <Route path="/student-details" element={<StudentDetails />} />
+          <Route path="/student-details" element={<Student />} />
           <Route path="/student-goals" element={<Goals />} />
-          <Route path="/add-goal" element={<AddGoal />} />
-          <Route path="/add-student" element={<AddStudent />} />
+          <Route path="/add-goal" element={<AddNewGoal />} />
+          <Route path="/add-student" element={<RegisterStudent />} />
         </Routes>
       </Router>
     </AuthProvider>

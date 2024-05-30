@@ -62,7 +62,7 @@ const App = () => {
               )}
             </div>
             <div
-              className={`overlay-container absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-transform duration-600 ${
+              className={`overlay-container  absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-transform duration-600 ${
                 SignUp ? "-translate-x-full" : ""
               }`}
             >

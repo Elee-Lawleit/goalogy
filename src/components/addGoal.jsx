@@ -1,13 +1,13 @@
-import { ChevronRightIcon } from "@heroicons/react/16/solid"
-import { yupResolver } from "@hookform/resolvers/yup"
-import React, { useEffect, useRef, useState } from "react"
-import { useForm } from "react-hook-form"
-import { Switch } from "@headlessui/react"
-import { addGoalSchema } from "../schema/addGoal"
-import { format, addYears } from "date-fns"
+import { ChevronRightIcon } from "@heroicons/react/16/solid";
+import { yupResolver } from "@hookform/resolvers/yup";
+import React, { useEffect, useRef, useState } from "react";
+import { useForm } from "react-hook-form";
+import { Switch } from "@headlessui/react";
+import { addGoalSchema } from "../schema/addGoal";
+import { format, addYears } from "date-fns";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ")
+  return classes.filter(Boolean).join(" ");
 }
 
 const AddGoal = () => {
@@ -18,42 +18,43 @@ const AddGoal = () => {
     setValue,
   } = useForm({
     resolver: yupResolver(addGoalSchema),
-  })
+  });
+
+  const [enabled, setEnabled] = useState(false);
+  const startDateRef = useRef(null);
+  const endDateRef = useRef(null);
+  const today = format(new Date(), "yyyy-MM-dd");
+  const oneYearFromToday = format(addYears(new Date(), 1), "yyyy-MM-dd");
 
   const handleAddGoal = (data) => {
-    console.log(data)
-  }
-
-  const [enabled, setEnabled] = useState(false)
-  const startDateRef = useRef(null)
-  const endDateRef = useRef(null)
-
-  const today = format(new Date(), "yyyy-MM-dd")
-  const oneYearFromToday = format(addYears(new Date(), 1), "yyyy-MM-dd")
-
+    console.log(data);
+  };
   useEffect(() => {
-    setValue("startDate", today)
-    setValue("endDate", oneYearFromToday)
-    setValue("isIEPGoal", false) // Set default value to false
-  }, [setValue, today, oneYearFromToday])
+    setValue("startDate", today);
+    setValue("endDate", oneYearFromToday);
+    setValue("isIEPGoal", false);
+  }, [setValue, today, oneYearFromToday]);
 
   const handleStartDateChange = (e) => {
-    const newStartDate = e.target.value
-    const newEndDate = format(addYears(new Date(newStartDate), 1), "yyyy-MM-dd")
-    setValue("endDate", newEndDate)
-  }
+    const newStartDate = e.target.value;
+    const newEndDate = format(
+      addYears(new Date(newStartDate), 1),
+      "yyyy-MM-dd"
+    );
+    setValue("endDate", newEndDate);
+  };
 
   const handleSwitchChange = (checked) => {
-    setEnabled(checked)
-    setValue("isIEPGoal", checked)
-  }
+    setEnabled(checked);
+    setValue("isIEPGoal", checked);
+  };
 
-  console.log(errors)
+  console.log(errors);
 
   return (
-    <div className="mb-2 max-w-xl mx-auto">
+    <div className="mb-2 ">
       <div className="bg-primary text-white p-2 uppercase rounded-md text-xl text-center font-semibold h-fit mt-2 mx-2">
-        <p>Add Student</p>
+        <p>Add Goal</p>
       </div>
       <div className="mt-2">
         <form
@@ -165,7 +166,7 @@ const AddGoal = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddGoal
+export default AddGoal;
