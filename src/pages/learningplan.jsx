@@ -1,11 +1,59 @@
-import React, {useRef} from "react"
+import React, { useRef, useEffect } from "react"
 import { FaDownload, FaPrint } from "react-icons/fa6"
 import jsPDF from "jspdf"
 import { useReactToPrint } from "react-to-print"
 import html2canvas from "html2canvas"
-import {Bar} from "chart.js"
+import { Chart } from "chart.js"
+import { BarController, LinearScale, CategoryScale, BarElement } from "chart.js"
 
 const LearningPlan = () => {
+  const data = {
+    labels: "label_here",
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [65, 59, 80, 81, 56, 55, 40],
+        backgroundColor: [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(255, 159, 64, 0.2)",
+          "rgba(255, 205, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(201, 203, 207, 0.2)",
+        ],
+        borderColor: [
+          "rgb(255, 99, 132)",
+          "rgb(255, 159, 64)",
+          "rgb(255, 205, 86)",
+          "rgb(75, 192, 192)",
+          "rgb(54, 162, 235)",
+          "rgb(153, 102, 255)",
+          "rgb(201, 203, 207)",
+        ],
+        borderWidth: 1,
+      },
+    ],
+  }
+
+  useEffect(() => {
+    Chart.register(BarController, LinearScale, CategoryScale, BarElement)
+    const chart = new Chart(document.getElementById("modifications"), {
+      type: "bar",
+      data: data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    })
+    
+
+    return () => chart.destroy()
+  }, [])
+
   const printRef = useRef()
   const handlePrint = useReactToPrint({
     content: () => printRef.current,
@@ -37,11 +85,17 @@ const LearningPlan = () => {
       {/* buttons div */}
       <div className="bg-white p-3 w-[672px] mx-auto rounded-md">
         <div className="flex gap-2">
-          <button className="rounded-md bg-custom-green2 hover:bg-custom-green1 px-2.5 py-1.5 text-lg text-white shadow-sm ring-1 ring-inset flex gap-2 items-baseline" onClick={handleDownload}>
+          <button
+            className="rounded-md bg-custom-green2 hover:bg-custom-green1 px-2.5 py-1.5 text-lg text-white shadow-sm ring-1 ring-inset flex gap-2 items-baseline"
+            onClick={handleDownload}
+          >
             <FaDownload className="inline-block" />
             Download Learning Plan PDF
           </button>
-          <button className="rounded-md bg-custom-green2 hover:bg-custom-green1 px-2.5 py-1.5 text-lg text-white shadow-sm ring-1 ring-inset flex gap-2 items-baseline" onClick={handlePrint}>
+          <button
+            className="rounded-md bg-custom-green2 hover:bg-custom-green1 px-2.5 py-1.5 text-lg text-white shadow-sm ring-1 ring-inset flex gap-2 items-baseline"
+            onClick={handlePrint}
+          >
             <FaPrint className="inline-block" />
             Print Learning plan
           </button>

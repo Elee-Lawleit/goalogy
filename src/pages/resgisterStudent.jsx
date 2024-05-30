@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { Fragment, useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -8,8 +8,9 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import SideBar from "../components/sideBar";
 import GoalsDetails from "../components/goalsDetails";
+import AddStudent from "../components/addStudent";
 
-export default function Goals() {
+export default function RegisterStudent() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -112,7 +113,7 @@ export default function Goals() {
         <main className="py-10 px-10 lg:pl-72">
           <div className="px-4 sm:px-6 lg:px-8">
             <div className="mt-4">
-              <GoalsDetails />
+              <AddStudent />
             </div>
           </div>
         </main>
