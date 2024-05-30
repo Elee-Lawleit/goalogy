@@ -10,7 +10,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import Student from "./pages/student";
 import RegisterStudent from "./pages/resgisterStudent";
 import AddNewGoal from "./pages/addNewGoal";
-import Goals from "./pages/goals.jsx";
+import Goals from "./pages/goalAdd.jsx";
 import LearningPlan from "./pages/learningplan.jsx"
 
 function App() {
