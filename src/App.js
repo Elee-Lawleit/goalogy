@@ -5,12 +5,12 @@ import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
-import Goals from "./pages/goals";
 import AccountsSetting from "./pages/accountsSetting";
 import { AuthProvider } from "./contexts/AuthContext";
 import Student from "./pages/student";
 import RegisterStudent from "./pages/resgisterStudent";
 import AddNewGoal from "./pages/addNewGoal";
+import Goals from "./pages/goals.jsx";
 
 function App() {
   return (
